@@ -8,22 +8,19 @@ export function Footer() {
     <FooterContainer>
       <Main>
         <Text>
-          <FormattedMessage id='made_by' />
+          Developed by{' '}
+          <Link href='https://github.com/deploykat' target='_blank'>
+            deploykat <Github size={14} />
+          </Link>
+        </Text>
+
+
+        <Text>
+          Forked from{' '}
           <Link href='https://github.com/Lucas8x' target='_blank'>
             Lucas Emanuel <Github size={14} />
           </Link>
         </Text>
-
-        <Text>
-          <FormattedMessage id='source_code' />
-          <Link
-            href='https://github.com/RagnarokMvpTimer/frontend'
-            target='_blank'
-          >
-            Github <Github size={14} />
-          </Link>
-        </Text>
-
         {/* <Text>
           <FormattedMessage id='hosted_on' />
           <Link href='https://vercel.com/' target='_blank'>

@@ -40,6 +40,11 @@ export function MvpCard({ mvp }: MvpCardProps) {
 
   const isActive = !!mvp.deathMap;
 
+  const spawnMapNames = useMemo(
+    () => mvp.spawn.map((spawn) => spawn.mapname).join(', '),
+    [mvp.spawn]
+  );
+
   const nextRespawn = useMemo(
     () => dayjs(mvp.deathTime).add(getMvpRespawnTime(mvp), 'ms'),
     [mvp]
@@ -64,6 +69,12 @@ export function MvpCard({ mvp }: MvpCardProps) {
         </Header>
 
         <MvpSprite id={mvp.id} name={mvp.name} animated={animatedSprites} />
+
+        {!!spawnMapNames && (
+          <MapName>
+            <Bold>{spawnMapNames}</Bold>
+          </MapName>
+        )}
 
         {isActive ? (
           <>
