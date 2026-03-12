@@ -1,17 +1,54 @@
 import { styled } from '@linaria/react';
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  width: 220px;
-  padding: 10px 0;
+  width: 210px;
+  padding: 22px 8px 10px;
 
-  border-radius: 8px;
+  border-radius: 6px;
 
-  background-color: var(--mvpCard_bg);
-  border: 1px solid var(--primary);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92),
+    var(--mvpCard_bg)
+  );
+  border: 1px solid #ffffff;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.45),
+    0 2px 2px rgba(0, 0, 0, 0.25);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 18px;
+    background: linear-gradient(180deg, #f7fbff, #d4e0f5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  }
+`;
+
+export const TitleBar = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 18px;
+  padding: 0 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 11px;
+  font-weight: 600;
+  color: #000;
+  pointer-events: none;
 `;
 
 export const Bold = styled.span`
