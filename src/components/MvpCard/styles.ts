@@ -42,30 +42,6 @@ export const MapName = styled.span`
   color: var(--mvpCard_text);
 `;
 
-const Button = styled.button`
-  width: 100%;
-  padding: 5px 20px;
-
-  border: 0;
-  border-radius: 4px;
-
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff;
-
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-
-export const KilledNow = styled(Button)`
-  background-color: var(--mvpCard_killButton);
-`;
-
-export const EditButton = styled(Button)`
-  background-color: var(--mvpCard_editButton);
-`;
-
 export const Controls = styled.div<{ isActive?: boolean }>`
   display: flex;
   align-items: center;

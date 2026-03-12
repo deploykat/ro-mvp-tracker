@@ -5,13 +5,13 @@ export const Container = styled.header`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
 
-  height: 75px;
-  padding: 0 30px;
+  height: 40px;
+  padding: 0 20px;
 
   background-color: var(--primary);
 
   @media (max-width: 768px) {
-    padding: 0 15px;
+    padding: 0 12px;
   }
 `;
 
@@ -21,27 +21,19 @@ export const LogoContainer = styled.div`
   grid-area: 1 / 1 / 2 / 2;
 `;
 
-export const Logo = styled.img`
-  width: 55px;
-  height: auto;
-`;
-
 export const Title = styled.h1`
-  margin-left: 20px;
+  margin-left: 0;
 
-  font-weight: bold;
-  font-size: 22px;
+  font-family: 'Times New Roman', 'Georgia', serif;
+  font-weight: 600;
+  font-size: 18px;
 
   white-space: nowrap;
 
   color: var(--header_text);
 
-  @media (min-width: 768px) and (max-width: 935px) {
-    font-size: 16px;
-  }
-
   @media (max-width: 768px) {
-    display: none;
+    font-size: 16px;
   }
 `;
 

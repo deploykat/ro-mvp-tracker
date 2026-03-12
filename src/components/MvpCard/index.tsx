@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Map, RefreshCcw, Trash2, Edit2 } from '@styled-icons/feather';
+import { Map, RefreshCcw, Trash2, Check, Plus } from '@styled-icons/feather';
 import { FormattedMessage } from 'react-intl';
 import dayjs from 'dayjs';
 
@@ -89,13 +89,6 @@ export function MvpCard({ mvp }: MvpCardProps) {
                 )
               }
             />
-
-            <MapName>
-              <FormattedMessage id='map' />
-              {'\n'}
-              <Bold>{mvp.deathMap}</Bold>
-            </MapName>
-
             <Controls>
               <Control
                 onClick={() => setIsMapModalOpen(true)}
@@ -124,13 +117,19 @@ export function MvpCard({ mvp }: MvpCardProps) {
             </Controls>
           </>
         ) : (
-          <Controls isActive={!isActive}>
-            <KilledNow onClick={handleKilledNow}>
-              <FormattedMessage id='killed_now' />
-            </KilledNow>
-            <EditButton onClick={() => setEditingMvp(mvp)}>
-              <FormattedMessage id='edit' />
-            </EditButton>
+          <Controls>
+            <Control
+              onClick={handleKilledNow}
+              title={GetTranslateText('killed_now')}
+            >
+              <Check />
+            </Control>
+            <Control
+              onClick={() => setEditingMvp(mvp)}
+              title={GetTranslateText('edit')}
+            >
+              <Plus />
+            </Control>
           </Controls>
         )}
       </Container>

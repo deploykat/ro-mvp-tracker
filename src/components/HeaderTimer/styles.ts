@@ -1,7 +1,7 @@
 import { styled } from '@linaria/react';
 
 export const Hour = styled.span`
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: bold;
 
   display: flex;
