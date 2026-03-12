@@ -14,7 +14,7 @@ import { useSettings } from '@/contexts/SettingsContext';
 import { getMvpRespawnTime } from '@/utils';
 import { GetTranslateText } from '@/utils/GetTranslateText';
 
-import { Container, Header, ID, Name, MapName, Controls, Control, Bold, TitleBar } from './styles';
+import { Container, MapName, Controls, Control, Bold, TitleBar } from './styles';
 
 interface MvpCardProps {
   mvp: IMvp;
@@ -56,11 +56,6 @@ export function MvpCard({ mvp }: MvpCardProps) {
           <span>{mvp.name}</span>
           <span>{mvp.id}</span>
         </TitleBar>
-
-        <Header>
-          <ID>{`(${mvp.id})`}</ID>
-          <Name>{mvp.name}</Name>
-        </Header>
 
         <MvpSprite id={mvp.id} name={mvp.name} animated={animatedSprites} />
 
