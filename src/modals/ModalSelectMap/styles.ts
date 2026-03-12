@@ -43,12 +43,14 @@ export const Modal = styled.div`
 `;
 
 export const Title = styled.span`
-  color: var(--modal_name);
-  margin-top: -30px;
-  text-align: center;
+  position: absolute;
+  top: 2px;
+  left: 10px;
 
-  font-size: 24px;
-  font-weight: 600;
+  color: #000;
+
+  font-size: 12px;
+  font-weight: 400;
 `;
 
 export const MapsDisplayGrid = styled.div<{ cols: number }>`
@@ -88,7 +90,9 @@ export const MapDetails = styled.div`
 `;
 
 export const MapName = styled.span`
-  font-weight: bold;
+  font-weight: 400;
+  font-family: 'Courier New', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Lucida Console', monospace;
 `;
 
 export const MapRespawnTime = styled.div`

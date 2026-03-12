@@ -79,6 +79,8 @@ export const MapName = styled.span`
   margin-top: 5px;
   color: var(--mvpCard_text);
   font-size: 12px;
+  font-family: 'Courier New', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Lucida Console', monospace;
 `;
 
 export const Controls = styled.div<{ isActive?: boolean }>`

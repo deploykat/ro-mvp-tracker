@@ -130,8 +130,9 @@ export function MvpCard({ mvp }: MvpCardProps) {
         )}
       </Container>
 
-      {isActive && isMapModalOpen && (
+      {isActive && isMapModalOpen && mvp.deathMap && (
         <ModalMvpMap
+          mvpId={mvp.id}
           deathMap={mvp.deathMap}
           deathPosition={mvp.deathPosition}
           close={() => setIsMapModalOpen(false)}

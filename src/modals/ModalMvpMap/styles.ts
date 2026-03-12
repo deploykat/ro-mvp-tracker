@@ -37,9 +37,15 @@ export const Modal = styled.div`
 `;
 
 export const Name = styled.span`
-  color: var(---modal_text);
-  font-weight: bold;
-  font-size: 1.8rem;
+  position: absolute;
+  top: 2px;
+  left: 10px;
+
+  color: #000;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: 'Courier New', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Lucida Console', monospace;
 `;
 
 export const Warning = styled.span`
@@ -51,4 +57,34 @@ export const Warning = styled.span`
   color: var(---modal_text);
   font-weight: bold;
   font-size: 1.4rem;
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-top: 1.2rem;
+`;
+
+export const ActionButton = styled.button`
+  min-width: 80px;
+  padding: 4px 12px;
+
+  border-radius: 3px;
+  border: 1px solid #8391ad;
+
+  background: linear-gradient(180deg, #ffffff, #d4e0f5);
+  box-shadow:
+    0 1px 0 #ffffff inset,
+    0 -1px 0 rgba(0, 0, 0, 0.15) inset;
+
+  font-family: 'Trebuchet MS', 'Verdana', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(180deg, #ffffff, #c7d6f2);
+  }
 `;

@@ -28,6 +28,7 @@ interface MvpsContextData {
   resetMvpTimer: (mvp: IMvp) => void;
   killMvp: (mvp: IMvp, time?: Date | null) => void;
   removeMvpByMap: (mvpID: number, deathMap: string) => void;
+  updateDeathPosition: (mvpID: number, deathMap: string, position: IMapMark) => void;
   setEditingMvp: (mvp: IMvp) => void;
   closeEditMvpModal: () => void;
   //clearActiveMvps: () => void;
@@ -43,10 +44,21 @@ export function MvpProvider({ children }: MvpProviderProps) {
   const [activeMvps, setActiveMvps] = useState<IMvp[]>([]);
   const [allMvps, setAllMvps] = useState<IMvp[]>([]);
 
+  function sortByRespawn(list: IMvp[]) {
+    return [...list].sort((a: IMvp, b: IMvp) => {
+      if (!a.deathTime || !b.deathTime) return 0;
+      return dayjs(a.deathTime)
+        .add(getMvpRespawnTime(a), 'ms')
+        .diff(dayjs(b.deathTime).add(getMvpRespawnTime(b), 'ms'));
+    });
+  }
+
   const resetMvpTimer = useCallback((mvp: IMvp) => {
     const updatedMvp = { ...mvp, deathTime: new Date() };
     setActiveMvps((state) =>
-      state.map((m) => (m.deathMap === mvp.deathMap ? updatedMvp : m))
+      sortByRespawn(
+        state.map((m) => (m.deathMap === mvp.deathMap ? updatedMvp : m))
+      )
     );
   }, []);
 
@@ -62,18 +74,21 @@ export function MvpProvider({ children }: MvpProviderProps) {
       deathTime,
     };
 
-    setActiveMvps((s) =>
-      [...s, killedMvp].sort((a: IMvp, b: IMvp) => {
-        const bothHaveDeathTime = a.deathTime && b.deathTime;
-        if (!bothHaveDeathTime) {
-          return 0;
-        }
-        return dayjs(a.deathTime)
-          .add(getMvpRespawnTime(a), 'ms')
-          .diff(dayjs(b.deathTime).add(getMvpRespawnTime(b), 'ms'));
-      })
-    );
+    setActiveMvps((s) => sortByRespawn([...s, killedMvp]));
   }, []);
+
+  const updateDeathPosition = useCallback(
+    (mvpID: number, deathMap: string, position: IMapMark) => {
+      setActiveMvps((state) =>
+        state.map((m) =>
+          m.id === mvpID && m.deathMap === deathMap
+            ? { ...m, deathPosition: position }
+            : m
+        )
+      );
+    },
+    []
+  );
 
   const closeEditMvpModal = useCallback(() => setEditingMvp(undefined), []);
 
@@ -83,7 +98,7 @@ export function MvpProvider({ children }: MvpProviderProps) {
     async function loadActiveMvps() {
       setIsLoading(true);
       const savedActiveMvps = await loadMvpsFromLocalStorage(server);
-      setActiveMvps(savedActiveMvps || []);
+      setActiveMvps(sortByRespawn(savedActiveMvps || []));
       setIsLoading(false);
     }
     loadActiveMvps();
@@ -127,6 +142,7 @@ export function MvpProvider({ children }: MvpProviderProps) {
         resetMvpTimer,
         killMvp,
         removeMvpByMap,
+        updateDeathPosition,
         setEditingMvp,
         closeEditMvpModal,
         //clearActiveMvps,

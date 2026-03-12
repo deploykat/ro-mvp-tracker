@@ -14,9 +14,8 @@ export function Footer() {
           </Link>
         </Text>
 
-
         <Text>
-          Forked from{' '}
+          | Forked from{' '}
           <Link href='https://github.com/Lucas8x' target='_blank'>
             Lucas Emanuel <Github size={14} />
           </Link>
@@ -29,7 +28,7 @@ export function Footer() {
         </Text> */}
 
         <Text>
-          <FormattedMessage id='sprites_from' />
+          | <FormattedMessage id='sprites_from' />
           <Link href='https://www.divine-pride.net/' target='_blank'>
             DivinePride <ExternalLink size={14} />
           </Link>
@@ -40,7 +39,7 @@ export function Footer() {
         </Text>
 
         <Text>
-          <FormattedMessage id='affiliation' />
+          | <FormattedMessage id='affiliation' />
           <Bold>DivinePride, </Bold>
           <Bold>iRO Wiki DB</Bold>
           <FormattedMessage id='or' />
