@@ -1,4 +1,4 @@
-# Frontend of Ragnarok MVP Timer
+# Frontend of Ragnarok Helper
 
 Keep track of Ragnarok bosses' death times to know when the next respawn will be.
 

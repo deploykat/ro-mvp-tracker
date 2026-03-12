@@ -8,7 +8,11 @@ export const Container = styled.header`
   height: 40px;
   padding: 0 20px;
 
-  background-color: var(--primary);
+  /* Match RO window title bar / card title bar */
+  background: linear-gradient(180deg, #f7fbff, #d4e0f5);
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
 
   @media (max-width: 768px) {
     padding: 0 12px;
@@ -24,13 +28,13 @@ export const LogoContainer = styled.div`
 export const Title = styled.h1`
   margin-left: 0;
 
-  font-family: 'Times New Roman', 'Georgia', serif;
-  font-weight: 600;
-  font-size: 18px;
+  font-family: 'Tahoma 11', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 
   white-space: nowrap;
 
-  color: var(--header_text);
+  color: #000;
 
   @media (max-width: 768px) {
     font-size: 16px;
@@ -43,4 +47,8 @@ export const Customization = styled.div`
   justify-content: flex-end;
 
   gap: 1.6rem;
+
+  button svg {
+    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.5));
+  }
 `;

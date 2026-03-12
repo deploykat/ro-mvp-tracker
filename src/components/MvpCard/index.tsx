@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
 import { Map, RefreshCcw, Trash2, Check, Plus } from '@styled-icons/feather';
-import { FormattedMessage } from 'react-intl';
 import dayjs from 'dayjs';
 
 import { MvpSprite } from '../MvpSprite';

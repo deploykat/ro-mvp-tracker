@@ -11,5 +11,5 @@ export const Hour = styled.span`
 
   text-align: center;
 
-  color: var(--header_text);
+  color: #000;
 `;

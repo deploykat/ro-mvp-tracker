@@ -2,7 +2,7 @@ import { styled } from '@linaria/react';
 
 export const Button = styled.button`
   font-weight: 500;
-  color: var(--header_text);
+  color: #000;
   background: none;
 
   &:hover {

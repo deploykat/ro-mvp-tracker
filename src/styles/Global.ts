@@ -9,7 +9,7 @@ export const globals = css`
       margin: 0;
       outline: 0;
       box-sizing: border-box;
-      font-family: 'Jost', sans-serif;
+      font-family: 'Tahoma 11', sans-serif;
     }
 
     #root {

@@ -11,7 +11,7 @@ export function Header() {
   return (
     <Container>
       <LogoContainer>
-        <Title>Ragnarok MVP Timer</Title>
+        <Title>Ragnarok Helper</Title>
       </LogoContainer>
 
       <HeaderTimer use24HourFormat={use24HourFormat} />

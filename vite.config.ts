@@ -41,7 +41,7 @@ export default defineConfig({
       },
       manifest: {
         short_name: 'MVP Timer',
-        name: 'Ragnarok MVP Timer',
+        name: 'Ragnarok Helper',
         lang: 'en',
         description: 'app to track ragnarok mvp respawn',
         display: 'standalone',

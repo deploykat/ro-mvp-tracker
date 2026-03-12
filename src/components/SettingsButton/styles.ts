@@ -7,7 +7,7 @@ export const Container = styled.div`
     width: 24px;
     height: 24px;
     stroke-width: 2px;
-    color: white;
+    color: #000;
   }
 
   &:hover {
