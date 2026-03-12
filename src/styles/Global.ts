@@ -21,135 +21,137 @@ export const globals = css`
     :root,
     html[data-theme='light'] {
       color-scheme: light;
-      --primary: #f89200;
-      --secondary: #f6f8fa;
+      /* Ragnarok Online–style light palette */
+      --primary: #3a5f98; /* window title / main border */
+      --secondary: #e6e6e6; /* window background */
 
       --text: #000;
-      --header_text: #fff;
+      --header_text: #ffffff;
 
-      --warning_header_bg: #1b1c1d;
-      --warning_header_text: #fff;
+      --warning_header_bg: #3a5f98;
+      --warning_header_text: #ffffff;
 
-      --scrollbar_bg: #f6f8fa;
-      --scrollbar_thumb: #f89200;
+      --scrollbar_bg: #d4d7e3;
+      --scrollbar_thumb: #3a5f98;
 
-      --mvpCard_id: #421411;
-      --mvpCard_name: #f89200;
-      --mvpCard_bg: #fff;
-      --mvpCard_text: #421411;
-      --mvpCard_killButton: #d10000;
-      --mvpCard_editButton: #f89200;
+      --mvpCard_id: #1f1f1f;
+      --mvpCard_name: #1f3f7a;
+      --mvpCard_bg: #e6e6e6;
+      --mvpCard_text: #1f1f1f;
+      --mvpCard_killButton: #b3262e; /* RO red button */
+      --mvpCard_editButton: #3a5f98;
 
-      --mvpCard_controls_showMap: #00a8ff;
-      --mvpCard_controls_edit: #f89200;
-      --mvpCard_controls_delete: #d10000;
+      --mvpCard_controls_showMap: #3a5f98;
+      --mvpCard_controls_edit: #2f7fa8;
+      --mvpCard_controls_delete: #b3262e;
 
-      --timers_passed: #d10000;
-      --timers_normal: #421411;
-      --timers_respawning: #62831f;
+      --timers_passed: #b3262e;
+      --timers_normal: #1f1f1f;
+      --timers_respawning: #2f7fa8;
 
-      --switch_bg: #ffa800;
+      --switch_bg: #3a5f98;
       --switch_handle: #f6f8fa;
 
-      --modal_bg: #fff;
-      --modal_text: #421411;
-      --modal_hl: #1b1c1d;
-      --modal_name: #ffa800;
-      --modal_time: #ffa800;
-      --modal_button: #f89200;
+      --modal_bg: #e6e6e6;
+      --modal_text: #1f1f1f;
+      --modal_hl: #1f3f7a;
+      --modal_name: #1f3f7a;
+      --modal_time: #1f3f7a;
+      --modal_button: #3a5f98;
 
-      --modal_datePicker_border: #000;
+      --modal_datePicker_border: #3a5f98;
 
-      --modal_serverSelect_bg: #f6f8fa;
-      --modal_serverSelect_bgActive: #f89200;
+      --modal_serverSelect_bg: #d4d7e3;
+      --modal_serverSelect_bgActive: #3a5f98;
       --modal_serverSelect_text: #000;
-      --modal_serverSelect_textActive: #fff;
-      --modal_serverSelect_border: #f89200;
+      --modal_serverSelect_textActive: #ffffff;
+      --modal_serverSelect_border: #3a5f98;
 
-      --modal_changeMap_border: #00a8ff;
+      --modal_changeMap_border: #3a5f98;
       --modal_changeMap_text: #000;
-      --modal_changeMap_selectedMapBorder: #ffa800;
+      --modal_changeMap_selectedMapBorder: #3a5f98;
 
-      --filterSearch_bg: #fff;
-      --filterSearch_border: #f89200;
+      --filterSearch_bg: #ffffff;
+      --filterSearch_border: #3a5f98;
       --filterSearch_text: #000;
-      --filterSearch_border_focus: #000;
+      --filterSearch_border_focus: #1f3f7a;
 
-      --languagePicker_bg: #f6f8fa;
-      --languagePicker_border: #f89200;
-      --languagePicker_text: #421411;
+      --languagePicker_bg: #d4d7e3;
+      --languagePicker_border: #3a5f98;
+      --languagePicker_text: #1f1f1f;
 
       --footer_text: #000;
-      --footer_link: #53338d;
+      --footer_link: #1f3f7a;
 
-      --pulse_color: #e5e5e5;
+      --pulse_color: #d4d7e3;
 
       color: var(--text);
     }
 
     html[data-theme='dark'] {
       color-scheme: dark;
-      --primary: #1b1c1d;
-      --secondary: #2e2e2e;
+      /* Dark variant inspired by RO but subdued */
+      --primary: #253a5c;
+      --secondary: #1e1f26;
 
-      --text: #fff;
-      --header_text: #fff;
+      --text: #f5f5f5;
+      --header_text: #ffffff;
 
-      --warning_header_bg: #f89200;
-      --warning_header_text: #000;
+      --warning_header_bg: #3a5f98;
+      --warning_header_text: #ffffff;
 
-      --scrollbar_bg: #2e2e2e;
-      --scrollbar_thumb: #f89200;
+      --scrollbar_bg: #1e1f26;
+      --scrollbar_thumb: #3a5f98;
 
-      --mvpCard_id: #fff;
-      --mvpCard_name: #fff;
-      --mvpCard_bg: #262626;
-      --mvpCard_text: #fff;
-      --mvpCard_killButton: #d10000;
-      --mvpCard_editButton: #f89200;
-      --mvpCard_controls_showMap: #00a8ff;
-      --mvpCard_controls_edit: #f89200;
-      --mvpCard_controls_delete: #d10000;
+      --mvpCard_id: #f5f5f5;
+      --mvpCard_name: #ffffff;
+      --mvpCard_bg: #252633;
+      --mvpCard_text: #f5f5f5;
+      --mvpCard_killButton: #b3262e;
+      --mvpCard_editButton: #3a5f98;
+      --mvpCard_controls_showMap: #3a5f98;
+      --mvpCard_controls_edit: #2f7fa8;
+      --mvpCard_controls_delete: #b3262e;
 
-      --timers_passed: #d10000;
-      --timers_normal: #fff;
-      --timers_respawning: #62831f;
+      --timers_passed: #ff6b6b;
+      --timers_normal: #f5f5f5;
+      --timers_respawning: #7fb7ff;
 
-      --switch_bg: #fff;
-      --switch_handle: #000;
+      --switch_bg: #3a5f98;
+      --switch_handle: #f6f8fa;
 
-      --modal_bg: #262626;
-      --modal_text: #fff;
-      --modal_hl: #fff;
-      --modal_name: #f89200;
-      --modal_time: #f89200;
-      --modal_button: #f89200;
+      --modal_bg: #252633;
+      --modal_text: #f5f5f5;
+      --modal_hl: #ffffff;
+      --modal_name: #7fb7ff;
+      --modal_time: #7fb7ff;
+      --modal_button: #3a5f98;
 
-      --modal_datePicker_border: #fff;
+      --modal_datePicker_border: #7fb7ff;
 
-      --modal_serverSelect_bg: #454545;
-      --modal_serverSelect_bgActive: #f89200;
-      --modal_serverSelect_text: #fff;
-      --modal_serverSelect_textActive: #fff;
+      --modal_serverSelect_bg: #2f3140;
+      --modal_serverSelect_bgActive: #3a5f98;
+      --modal_serverSelect_text: #f5f5f5;
+      --modal_serverSelect_textActive: #ffffff;
       --modal_serverSelect_border: transparent;
 
-      --modal_changeMap_border: #00a8ff;
-      --modal_changeMap_text: #fff;
-      --modal_changeMap_selectedMapBorder: #ffa800;
+      --modal_changeMap_border: #7fb7ff;
+      --modal_changeMap_text: #f5f5f5;
+      --modal_changeMap_selectedMapBorder: #7fb7ff;
 
-      --filterSearch_bg: #262626;
+      --filterSearch_bg: #252633;
       --filterSearch_border: #1b1c1d;
-      --filterSearch_text: #fff;
-      --filterSearch_border_focus: #fff;
+      --filterSearch_text: #f5f5f5;
+      --filterSearch_border_focus: #7fb7ff;
 
-      --languagePicker_bg: #454545;
+      --languagePicker_bg: #2f3140;
       --languagePicker_border: #1b1c1d;
-      --languagePicker_text: #fff;
+      --languagePicker_text: #f5f5f5;
 
-      --footer_text: #fff;
-      --footer_link: #f89200;
+      --footer_text: #f5f5f5;
+      --footer_link: #7fb7ff;
 
-      --pulse_color: #404040;
+      --pulse_color: #303244;
 
       color: var(--text);
     }
