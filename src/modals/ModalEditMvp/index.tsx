@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import dayjs from 'dayjs';
 
@@ -33,14 +33,16 @@ export function ModalEditMvp() {
   const [newTime, setNewTime] = useState<Date | null>(
     mvp.deathTime || new Date()
   );
-  const [selectedMap, setSelectedMap] = useState<string>(mvp.deathMap || '');
+  const [selectedMap, setSelectedMap] = useState<string>(
+    mvp.deathMap || (mvp.spawn.length === 1 ? mvp.spawn[0].mapname : '')
+  );
   const [markCoordinates, setMarkCoordinates] = useState<IMapMark>({
     x: -1,
     y: -1,
   });
 
-  const canChangeMap = !mvp.deathMap;
   const hasMoreThanOneMap = mvp.spawn.length > 1;
+  const canChangeMap = !mvp.deathMap && hasMoreThanOneMap;
 
   function handleConfirm() {
     if (!selectedMap) return;
@@ -54,10 +56,6 @@ export function ModalEditMvp() {
     killMvp(updatedMvp, newTime);
     closeEditMvpModal();
   }
-
-  useEffect(() => {
-    if (!hasMoreThanOneMap) setSelectedMap(mvp.spawn[0].mapname);
-  }, [hasMoreThanOneMap, mvp.spawn]);
 
   useKey('Escape', closeEditMvpModal);
 
@@ -102,7 +100,10 @@ export function ModalEditMvp() {
                 (<FormattedMessage id='optional_mark' />)
               </Optional>
             </Question>
+
             <Map mapName={selectedMap} onChange={setMarkCoordinates} />
+
+            <Question>{selectedMap}</Question>
           </>
         )}
 
