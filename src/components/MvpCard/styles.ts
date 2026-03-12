@@ -7,9 +7,10 @@ export const Container = styled.div`
   align-items: center;
 
   width: 210px;
-  padding: 22px 8px 10px;
+  padding: 22px 8px 14px;
 
   border-radius: 6px;
+  overflow: hidden;
 
   background: linear-gradient(
     180deg,
@@ -48,11 +49,11 @@ export const TitleBar = styled.div`
   font-size: 11px;
   font-weight: 600;
   color: #000;
-  pointer-events: none;
+  pointer-events: auto;
 `;
 
 export const Bold = styled.span`
-  font-weight: bold;
+  font-weight: normal;
 `;
 
 export const Header = styled.div`
@@ -77,6 +78,7 @@ export const MapName = styled.span`
   white-space: pre-wrap;
   margin-top: 5px;
   color: var(--mvpCard_text);
+  font-size: 12px;
 `;
 
 export const Controls = styled.div<{ isActive?: boolean }>`
@@ -93,17 +95,27 @@ export const Control = styled.button`
   align-items: center;
   justify-content: center;
 
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  min-width: 70px;
+  padding: 2px 10px;
 
-  font-weight: bolder;
+  border-radius: 3px;
+  border: 1px solid #8391ad;
+
+  background: linear-gradient(180deg, #ffffff, #d4e0f5);
+  box-shadow:
+    0 1px 0 #ffffff inset,
+    0 -1px 0 rgba(0, 0, 0, 0.15) inset;
+
+  font-family: 'Trebuchet MS', 'Verdana', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
 
   svg {
-    stroke-width: 3px;
-    width: 17px;
-    height: 17px;
-    color: #fff;
+    stroke-width: 2px;
+    width: 14px;
+    height: 14px;
+    color: #000;
   }
 
   &:disabled {
@@ -112,22 +124,38 @@ export const Control = styled.button`
   }
 
   &:hover {
-    opacity: 0.8;
+    background: linear-gradient(180deg, #ffffff, #c7d6f2);
   }
 
   &:first-child {
-    background-color: var(--mvpCard_controls_showMap);
+    /* kept for potential per-button overrides */
   }
+`;
 
-  &:nth-child(2) {
-    background-color: var(--mvpCard_controls_edit);
+export const CloseButton = styled.button`
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+
+  border-radius: 50%;
+  border: 1px solid #6b7a96;
+
+  background: linear-gradient(180deg, #ffffff, #d4e0f5);
+  box-shadow:
+    0 1px 0 #ffffff inset,
+    0 -1px 0 rgba(0, 0, 0, 0.2) inset;
+
+  font-size: 10px;
+  line-height: 10px;
+  color: #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(180deg, #ffffff, #c7d6f2);
   }
-
-  &:nth-child(3) {
-    background-color: var(--mvpCard_controls_delete);
-  }
-
-  /* :nth-child(4) {
-    background-color: var(--mvpCard_controls_edit);
-  } */
 `;

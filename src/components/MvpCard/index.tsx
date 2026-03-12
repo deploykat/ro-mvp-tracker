@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Map, RefreshCcw, Trash2, Check, Plus } from '@styled-icons/feather';
+import { Map, RefreshCcw, Check, Plus } from '@styled-icons/feather';
 import dayjs from 'dayjs';
 
 import { MvpSprite } from '../MvpSprite';
@@ -13,7 +13,7 @@ import { useSettings } from '@/contexts/SettingsContext';
 import { getMvpRespawnTime } from '@/utils';
 import { GetTranslateText } from '@/utils/GetTranslateText';
 
-import { Container, MapName, Controls, Control, Bold, TitleBar } from './styles';
+import { Container, MapName, Controls, Control, Bold, TitleBar, CloseButton } from './styles';
 
 interface MvpCardProps {
   mvp: IMvp;
@@ -53,7 +53,21 @@ export function MvpCard({ mvp }: MvpCardProps) {
       <Container>
         <TitleBar>
           <span>{mvp.name}</span>
-          <span>{mvp.id}</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+            <span>{mvp.id}</span>
+            {isActive && (
+              <CloseButton
+                onClick={() => {
+                  if (mvp.deathMap) {
+                    removeMvpByMap(mvp.id, mvp.deathMap);
+                  }
+                }}
+                title={GetTranslateText('controls.remove')}
+              >
+                ×
+              </CloseButton>
+            )}
+          </span>
         </TitleBar>
 
         <MvpSprite id={mvp.id} name={mvp.name} animated={animatedSprites} />
@@ -89,12 +103,6 @@ export function MvpCard({ mvp }: MvpCardProps) {
                 title={GetTranslateText('controls.reset_timer')}
               >
                 <RefreshCcw />
-              </Control>
-              <Control
-                onClick={() => removeMvpByMap(mvp.id, mvp.deathMap)}
-                title={GetTranslateText('controls.remove')}
-              >
-                <Trash2 />
               </Control>
               {/* <Control
               onClick={() => openAndEditModal(mvp)}
