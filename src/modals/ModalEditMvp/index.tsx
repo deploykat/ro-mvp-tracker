@@ -109,7 +109,7 @@ export function ModalEditMvp() {
 
         <Footer>
           {hasMoreThanOneMap && (
-            <ChangeMapButton size='lg' onClick={() => setSelectedMap('')}>
+            <ChangeMapButton onClick={() => setSelectedMap('')}>
               <FormattedMessage id='change_map' />
             </ChangeMapButton>
           )}
