@@ -26,6 +26,7 @@ export const SUPPORTED_SERVERS = [
   'GGH',
   'idRO',
   'iRO',
+  'myrise-ro',
   'jRO',
   'kROM',
   'kROS',
